@@ -36,3 +36,35 @@ export const getAllSkills = async (req: Request, res: Response): Promise<void> =
     });
   }
 };
+
+export const editSkill = async (req: Request, res: Response): Promise<void> => {
+  try {
+    const { id, ...updatedData } = req.body;
+
+    if (!id) {
+      res.status(400).json({ message: "Skill ID is required in body" });
+      return;
+    }
+
+    const updatedSkill = await SkillModel.findByIdAndUpdate(id, updatedData, {
+      new: true,
+      runValidators: true,
+    });
+
+    if (!updatedSkill) {
+      res.status(404).json({ message: "Skill not found" });
+      return;
+    }
+
+    res.status(200).json({
+      message: "Skill updated successfully",
+      data: updatedSkill,
+    });
+  } catch (error) {
+    console.error("Error updating skill:", error);
+    res.status(500).json({
+      message: "Failed to update skill",
+      error,
+    });
+  }
+};
