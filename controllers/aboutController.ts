@@ -4,7 +4,7 @@ import AboutModel from "../models/aboutModel"
 export const createAboutDetails = async (req: Request, res: Response): Promise<void> => {
   try{
    const aboutData=req.body;
-
+  
    const saveAboutData=await AboutModel.create(aboutData);
    res.status(201).json({
     message:"about details created Successfully",
