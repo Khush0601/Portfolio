@@ -1,6 +1,8 @@
 import express from "express"
 import mongoose from "mongoose"
 import aboutRoutes from "./routes/aboutRoutes";
+import skillRoutes from "./routes/skillRoutes"
+
 const dbconfig=require("./configs/db_config")
 const serverconfig = require('./configs/server_config');
 
@@ -24,6 +26,7 @@ db.once('open',()=>{
 })
 
 app.use("/portfolio/api/v1/user", aboutRoutes)
+app.use("/portfolio/api/v1/user", skillRoutes)
 
 //server connected:
 app.listen(PORT, () => {
