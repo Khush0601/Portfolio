@@ -3,6 +3,7 @@ import mongoose from "mongoose"
 import aboutRoutes from "./routes/aboutRoutes";
 import skillRoutes from "./routes/skillRoutes"
 import internshipRoutes from "./routes/internshipRoutes"
+import certificationRoutes from "./controllers/certificationController"
 const dbconfig=require("./configs/db_config")
 const serverconfig = require('./configs/server_config');
 
@@ -28,6 +29,7 @@ db.once('open',()=>{
 app.use("/portfolio/api/v1/user", aboutRoutes)
 app.use("/portfolio/api/v1/user", skillRoutes)
 app.use("/portfolio/api/v1/user", internshipRoutes)
+app.use("/portfolio/api/v1/user", certificationRoutes)
 
 //server connected:
 app.listen(PORT, () => {
