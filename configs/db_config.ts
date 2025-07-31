@@ -1,3 +1,5 @@
+import dotenv from 'dotenv';
+dotenv.config();
 module.exports={
-    DB_URL:"mongodb+srv://ksingh200601:1PzKmzbpyNtc05Tt@cluster0.mvaqhe6.mongodb.net/"
+    DB_URL:process.env.DB_URL
 }
