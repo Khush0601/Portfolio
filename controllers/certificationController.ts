@@ -37,6 +37,8 @@ export const getCertifications = async (req: Request, res: Response): Promise<vo
   }
 };
 
+
+
 export const editCertification = async (req: Request, res: Response): Promise<void> => {
   try {
     const { id, ...updatedData } = req.body;
