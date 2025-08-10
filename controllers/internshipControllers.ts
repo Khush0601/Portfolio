@@ -40,7 +40,7 @@ export const getInternshipDetails = async (_req: Request, res: Response): Promis
 export const editInternshipDetails = async (req: Request, res: Response): Promise<void> => {
   try {
     const { id, ...updatedData } = req.body;
-
+    
     if (!id) {
       res.status(400).json({ message: "Internship ID is required in body" });
       return;
