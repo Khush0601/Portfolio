@@ -7,7 +7,7 @@ export const createSkillsDetails = async (req: Request, res: Response): Promise<
   
    const saveSkillsData=await SkillModel.create(skillsData);
    res.status(201).json({
-    message:"about details created Successfully",
+    message:"skill details created Successfully",
     data:saveSkillsData,
    })
   }

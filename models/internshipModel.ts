@@ -1,7 +1,10 @@
 import mongoose, { Document, Schema } from "mongoose";
 
 export interface InternshipDocument extends Document {
-  companyName: string;
+  company: {
+    name: string;
+    logo?: string;
+  };
   title: string;
   duration: string;
   startDate: string;
@@ -11,7 +14,10 @@ export interface InternshipDocument extends Document {
 }
 
 const internshipSchema: Schema<InternshipDocument> = new mongoose.Schema({
-  companyName: { type: String, required: true },
+  company: {
+    name: { type: String, required: true },
+    logo: { type: String, required: true },
+  },
   title: { type: String, required: true },
   duration: { type: String, required: true },
   startDate: { type: String, required: true },

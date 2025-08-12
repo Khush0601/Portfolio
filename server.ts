@@ -6,6 +6,7 @@ import skillRoutes from "./routes/skillRoutes"
 import internshipRoutes from "./routes/internshipRoutes"
 import certificationRoutes from "./routes/certificationRoutes"
 import projectRoutes from './routes/projectroutes'
+import educationRoutes from './routes/educationRoutes'
 
 const dbconfig=require("./configs/db_config")
 const serverconfig = require('./configs/server_config');
@@ -37,6 +38,7 @@ app.use("/portfolio/api/v1/user", skillRoutes)
 app.use("/portfolio/api/v1/user", internshipRoutes)
 app.use("/portfolio/api/v1/user",certificationRoutes)
 app.use("/portfolio/api/v1/user",projectRoutes)
+app.use("/portfolio/api/v1/user",educationRoutes)
 
 //server connected:
 app.listen(PORT, () => {
